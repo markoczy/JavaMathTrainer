@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mkz.jmathtrainer.ui.panel.game.GUI_GameController">
+   <children>
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308">
+         <children>
+            <VBox spacing="10.0">
+               <children>
+                  <TitledPane animated="false" collapsible="false" text="Equation" wrapText="true">
+                     <content>
+                        <HBox>
+                           <children>
+                              <HBox fillHeight="false">
+                                 <children>
+                                    <Label graphicTextGap="20.0" maxWidth="1.7976931348623157E308" text="= ?" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <TextField fx:id="tfdOutputEquation" alignment="CENTER" disable="true" editable="false" maxWidth="1.7976931348623157E308" prefWidth="500.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </TextField>
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </TitledPane>
+                  <TitledPane collapsible="false" maxHeight="1.7976931348623157E308" text="Result" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="40.0" maxWidth="1.7976931348623157E308" text="Answer:">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" right="50.0" top="20.0" />
+                                       </HBox.margin>
+                                       <graphic>
+                                          <TextField fx:id="tfdInputValue" alignment="BOTTOM_LEFT" maxWidth="1.7976931348623157E308" onKeyPressed="#tfdInputValue_handleEnterPressed" prefHeight="30.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </TextField>
+                                       </graphic>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TitledPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <TitledPane animated="false" collapsible="false" text="Stats">
+                     <content>
+                        <VBox maxHeight="1.7976931348623157E308" minHeight="-Infinity" prefHeight="297.0" prefWidth="266.0">
+                           <children>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Time:" />
+                                    <Label fx:id="lblRemainingTime" alignment="CENTER_RIGHT" text="120.00" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                                    <Label text="[s]" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <Separator prefWidth="200.0" />
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Good:" GridPane.rowIndex="1" />
+                                    <Label text="Bad:" GridPane.rowIndex="2" />
+                                    <Label fx:id="lblGoodCount" text="0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                    <Label fx:id="lblBadCount" text="0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                    <Label text="[-]" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="[-]" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Round:" />
+                                    <Label text="[-]" GridPane.columnIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="lblCurrentRound" text="0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <Separator prefWidth="200.0" />
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Points:">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="lblPointsCount" text="0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                                    <Label text="[Pts.]" GridPane.columnIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <Separator prefWidth="200.0" />
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="142.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="96.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Last Event:">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="lblLastEvent" text="&lt;null&gt;" GridPane.columnIndex="1" GridPane.halignment="LEFT" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </content>
+                     <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </TitledPane>
+                  <Button fx:id="btnEnterValue" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnEnterValue_Clicked" text="Enter">
+                     <VBox.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>
