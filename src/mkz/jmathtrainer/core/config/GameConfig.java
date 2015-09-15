@@ -1,16 +1,33 @@
 package mkz.jmathtrainer.core.config;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GameConfig.
+ */
 public class GameConfig 
 {
+	
+	/** The addition enabled. */
 	public boolean additionEnabled=true;
+	
+	/** The subtraction enabled. */
 	public boolean subtractionEnabled=true;
+	
+	/** The multiplication enabled. */
 	public boolean multiplicationEnabled=true;
+	
+	/** The division enabled. */
 	public boolean divisionEnabled=true;
 	
+	/** The difficulty. */
 	public DifficultyEnum difficulty=DifficultyEnum.MEDIUM;
 	
+	/** The time in seconds. */
 	public int timeInSeconds=120;
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString()
 	{
@@ -34,8 +51,17 @@ public class GameConfig
 		return sb.toString();
 	}
 	
+	/**
+	 * The Enum DifficultyEnum.
+	 */
 	public enum DifficultyEnum
 	{
-		EASY,MEDIUM,HARD
+		
+		/** The easy. */
+		EASY,
+		/** The medium. */
+		MEDIUM,
+		/** The hard. */
+		HARD
 	};
 }

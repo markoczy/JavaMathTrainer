@@ -5,11 +5,23 @@ import java.util.Arrays;
 
 import mkz.jmathtrainer.core.equation.Equation.OperationEnum;
 
+/**
+ * The Class EquationTools.
+ */
 public class EquationTools 
 {
+	
+	/** The Constant EQUATION_PATTERN. */
 	static final char[] EQUATION_PATTERN = {'0','1','2','3','4','5','6','7','8','9','.','+','-','*','/',' '};
 	
-	// XXX Could do more but OK for now...
+	/**
+	 * Checks if a string is an equation.
+	 * (TODO Could do more but OK for now...)
+	 * 
+	 * @param s the s
+	 * @return true, if is equation
+	 */
+	//
 	public static boolean isEquation(String s)
 	{
 		if(s==null) return false;
@@ -29,6 +41,13 @@ public class EquationTools
 		return true;
 	}
 	
+	/**
+	 * Solve a equation.
+	 *
+	 * @param operations the operations
+	 * @param values the values
+	 * @return the double
+	 */
 	public static double solveEquation(OperationEnum[] operations,Double[] values)
 	{
 		try
@@ -86,11 +105,27 @@ public class EquationTools
 	}
 	
 	
+	/**
+	 * Wrapper for {@link#getEquationString(OperationEnum[] operations,Double[] values, boolean intOnly)}
+	 * shows the numbers as double values (round must be done before)
+	 *
+	 * @param operations the operations
+	 * @param values the values
+	 * @return the equation string
+	 */
 	public static String getEquationString(OperationEnum[] operations,Double[] values)
 	{
 		return getEquationString(operations,values, false);
 	}
 	
+	/**
+	 * Gets the equation string.
+	 *
+	 * @param operations the operations
+	 * @param values the values
+	 * @param intOnly the int only
+	 * @return the equation string
+	 */
 	public static String getEquationString(OperationEnum[] operations,Double[] values, boolean intOnly)
 	{
 		StringBuilder sb = new StringBuilder();
@@ -124,6 +159,12 @@ public class EquationTools
 		
 	}
 	
+	/**
+	 * Gets the operation string.
+	 *
+	 * @param operation the operation
+	 * @return the operation string
+	 */
 	public static String getOperationString(OperationEnum operation)
 	{
 		switch(operation)
@@ -142,6 +183,14 @@ public class EquationTools
 		}
 	}
 	
+	/**
+	 * Solves a operation.
+	 *
+	 * @param operation the operation
+	 * @param v1 the v1
+	 * @param v2 the v2
+	 * @return the double
+	 */
 	private static double solveOperation(OperationEnum operation, double v1, double v2)
 	{
 		switch(operation)
@@ -160,6 +209,13 @@ public class EquationTools
 		}
 	}
 	
+	/**
+	 * Gets the first operation by type.
+	 *
+	 * @param vec the vec
+	 * @param op the op
+	 * @return the first of
+	 */
 	static int getFirstOf(ArrayList<OperationEnum> vec, OperationEnum op)
 	{
 		IO.SysOutV("Try get first of, op is: "+op);
@@ -186,6 +242,12 @@ public class EquationTools
 		return -1;
 	}
 	
+	/**
+	 * Create random operation.
+	 *
+	 * @param validOps the valid ops
+	 * @return the operation enum
+	 */
 	public static OperationEnum randomOperation(ArrayList<OperationEnum> validOps)
 	{
 		int op=NumberTools.randomInteger(0, validOps.size()-1);

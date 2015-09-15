@@ -9,8 +9,18 @@ import mkz.jmathtrainer.util.EquationTools;
 import mkz.jmathtrainer.util.IO;
 import mkz.jmathtrainer.util.NumberTools;
 
+/**
+ * A factory for creating Equation objects.
+ */
 public class EquationFactory 
 {
+	
+	/**
+	 * Creates a new Equation object.
+	 *
+	 * @param aConfig the a config
+	 * @return the equation
+	 */
 	public static Equation createEquation(GameConfig aConfig)
 	{
 		switch(aConfig.difficulty)
@@ -31,6 +41,15 @@ public class EquationFactory
 		
 	}
 	
+	/**
+	 * Creates a new Equation object. Difficulty Easy.
+	 *
+	 * @param additionEnabled the addition enabled
+	 * @param subtractionEnabled the subtraction enabled
+	 * @param multiplicationEnabled the multiplication enabled
+	 * @param divisionEnabled the division enabled
+	 * @return the equation
+	 */
 	private static Equation createEasyEquation(boolean additionEnabled,boolean subtractionEnabled,
 			boolean multiplicationEnabled,boolean divisionEnabled)
 	{
@@ -67,6 +86,15 @@ public class EquationFactory
 		return rVal;
 	}
 	
+	/**
+	 * Creates a new Equation object. Difficulty Medium.
+	 *
+	 * @param additionEnabled the addition enabled
+	 * @param subtractionEnabled the subtraction enabled
+	 * @param multiplicationEnabled the multiplication enabled
+	 * @param divisionEnabled the division enabled
+	 * @return the equation
+	 */
 	private static Equation createMediumEquation(boolean additionEnabled,boolean subtractionEnabled,
 			boolean multiplicationEnabled,boolean divisionEnabled)
 	{
@@ -103,6 +131,15 @@ public class EquationFactory
 		return rVal;
 	}
 	
+	/**
+	 * Creates a new Equation object.
+	 *
+	 * @param additionEnabled the addition enabled
+	 * @param subtractionEnabled the subtraction enabled
+	 * @param multiplicationEnabled the multiplication enabled
+	 * @param divisionEnabled the division enabled
+	 * @return the equation
+	 */
 	// TODO Not implemented yet
 	private static Equation createHardEquation(boolean additionEnabled,boolean subtractionEnabled,
 			boolean multiplicationEnabled,boolean divisionEnabled)
@@ -112,6 +149,15 @@ public class EquationFactory
 		return rVal;
 	}
 	
+	/**
+	 * Creates a new Equation object. type Arithmetic sequence
+	 * e.g. 6+3 or 2-5+2 (no addition or substaction) 
+	 *
+	 * @param difficulty the difficulty
+	 * @param additionEnabled the addition enabled
+	 * @param subtractionEnabled the subtraction enabled
+	 * @return the equation
+	 */
 	// XXX -> private
 	public static Equation createArithmeticSequence(DifficultyEnum difficulty,boolean additionEnabled,boolean subtractionEnabled)
 	{
@@ -166,6 +212,15 @@ public class EquationFactory
 		return rVal;
 	}
 	
+	/**
+	 * Creates a new Equation object, type Geometric double (or dual)
+	 * e.g. 6/3 or 2*5 (no addition or substaction) 
+	 *
+	 * @param difficulty the difficulty
+	 * @param multiplicationEnabled the multiplication enabled
+	 * @param divisionEnabled the division enabled
+	 * @return the equation
+	 */
 	// XXX -> private
 	public static Equation createGeometricDouble(DifficultyEnum difficulty,boolean multiplicationEnabled,boolean divisionEnabled)
 	{
