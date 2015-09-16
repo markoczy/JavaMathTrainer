@@ -1,3 +1,11 @@
+/**
+ * File: IO.java
+ * 
+ * @author Aleistar Markoczy
+ * 
+ * Please feel free to use this class in community
+ * and/or commercial projects...
+ */
 package mkz.jmathtrainer.util;
 
 /**
@@ -25,7 +33,8 @@ public class IO
 	private static final int LOG_VERBOSE=4;
 	
 	/**
-	 * System out "verbose"
+	 * Output current method tree and a message text, 
+	 * log-level: Verbose
 	 *
 	 * @param message the message
 	 */
@@ -35,7 +44,8 @@ public class IO
 	}
 	
 	/**
-	 * System out "debug"
+	 * Output current method tree and a message text, 
+	 * log-level: Debug
 	 *
 	 * @param message the message
 	 */
@@ -45,7 +55,8 @@ public class IO
 	}
 	
 	/**
-	 * System out "warning"
+	 * Output current method tree and a message text, 
+	 * log-level: Warning
 	 *
 	 * @param message the message
 	 */
@@ -55,7 +66,8 @@ public class IO
 	}
 	
 	/**
-	 * System out "error"
+	 * Output current method tree and a message text, 
+	 * log-level: Error
 	 *
 	 * @param message the message
 	 */
@@ -65,7 +77,8 @@ public class IO
 	}
 	
 	/**
-	 * System out "fatal error"
+	 * Output current method tree and a message text, 
+	 * log-level: Fatal Error (will alway be shown)
 	 *
 	 * @param message the message
 	 */

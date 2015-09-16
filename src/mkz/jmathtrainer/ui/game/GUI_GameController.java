@@ -146,7 +146,8 @@ public class GUI_GameController
 	
 	/**
 	 * Initialise the game controller - Usually done after creating
-	 * or resetting the Game controler (this)
+	 * the Game controler (Attention: if called from outside while GUI is 
+	 * running, be sure to wrap this in platform.RunLater)
 	 *
 	 * @param aGameConfig the a game config
 	 * @param aLoader the a loader
@@ -178,6 +179,7 @@ public class GUI_GameController
 		 newEquation();
 		 updateGUI();
 		 loopTimer(++mGameTime);
+		 resetSelection();
 	}
 	
 	/**
@@ -244,7 +246,7 @@ public class GUI_GameController
 		Platform.runLater( new Runnable() {
 		    @Override
 		    public void run() {
-		    	tfdInputValue.positionCaret( 0 );
+		    	tfdInputValue.requestFocus();
 		    }
 		});
 		

@@ -10,6 +10,7 @@ package mkz.jmathtrainer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import mkz.jmathtrainer.util.IO;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
@@ -31,7 +32,6 @@ public class Main extends Application {
 
 			primaryStage.setTitle("Java math trainer");
 			primaryStage.setScene(scene);
-			// primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -44,7 +44,7 @@ public class Main extends Application {
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		System.out.println("Enty point");
+		IO.SysOutD("Application started");
 		launch(args);
 	}
 }

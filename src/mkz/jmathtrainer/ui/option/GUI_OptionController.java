@@ -1,8 +1,6 @@
 package mkz.jmathtrainer.ui.option;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -12,7 +10,6 @@ import mkz.jmathtrainer.ui.game.GUI_GameLoader;
 import mkz.jmathtrainer.util.IO;
 import mkz.jmathtrainer.util.JfxTools;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class GUI_OptionController.
  */

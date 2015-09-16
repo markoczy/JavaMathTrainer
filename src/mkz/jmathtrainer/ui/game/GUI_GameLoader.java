@@ -20,11 +20,11 @@ public class GUI_GameLoader
 {
 	
 	/**
-	 * Start a new game.
+	 * Start a new new game.
 	 * 
 	 * TODO Get stage from main application
 	 *
-	 * @param aConfig the a config
+	 * @param aConfig the reference config
 	 */
 	public void newGame(GameConfig aConfig)
 	{

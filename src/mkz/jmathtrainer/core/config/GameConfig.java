@@ -1,6 +1,5 @@
 package mkz.jmathtrainer.core.config;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class GameConfig.
  */
